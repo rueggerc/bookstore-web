@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+ 
+<h:head>
+		<f:facet name="first">
+			<meta charset="UTF-8"/>
+			<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+			<meta name="viewport" content="width=device-width, initial-scale=1"/>
+			<!-- The above 3 meta tags must come first in the head -->
+		</f:facet>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+sants+Pro:400,600"/>
+		
+		<!--  Bootstrap -->
+		<h:outputStylesheet library="css" name="bootstrap.css" />
+		<h:outputStylesheet library="css" name="bootstrap-select.min.css" />
+		<h:outputStylesheet library="css" name="bootstrap-select.theme.min.css" />
+		
+		
+		<!--  JQuery  -->
+		<h:outputScript library="js" name="jquery-2.2.4.min.js" />
+		<h:outputScript library="js" name="bootstrap.min.js" />
+		<h:outputScript library="js" name="bootstrap-select.min.js" />
+		<h:outputScript library="js" name="jquery.easypiechart.js" />
+		
+		<!-- App Common -->
+		<h:outputStylesheet library="css" name="master.css" />
+		<h:outputScript library="js" name="app.js" />
+		<h:outputScript library="js" name="ajax.js" />
+
+		<!--  Page Specific Overrides -->
+		<ui:insert name="headContent"></ui:insert>
+
+		
+</h:head>
+ 
+<h:body style="margin:0px;">
+	<div id="page" style="width:1000px;">
+		<div style="padding:10px 10px 10px 10px;">
+			<table style="width:100%;">
+				<tr>
+					<td valign="top" width="15%">
+						<ui:insert name="leftnav">
+						<ui:include src="/template/leftnav.xhtml" />
+						</ui:insert>
+					</td>
+					<td valign="top" width="85%">
+						<div id="content">
+							<p:ajaxStatus onstart="ajaxWaitCursorOn()" oncomplete="ajaxWaitCursorOff()"/>
+							<ui:insert name="content">
+								<ui:include src="/template/content.xhtml" />
+							</ui:insert>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+	
+	</div>
+ 
+ 
+</h:body>
+</html>

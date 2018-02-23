@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+ 	  xmlns:f="http://java.sun.com/jsf/core"      
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+        
+<h:body>
+<ui:composition template="template/maintemplate.xhtml">
+<ui:define name="headContent">
+	<h:outputStylesheet	library="css"  name="pages/books.css"/>
+	<h:outputScript		library="js"   name="pages/books.js"/>
+</ui:define>
+
+<ui:define name="content">
+#{booksBean.initialView}
+
+<h:form id="booksForm">
+	<h:inputHidden id="requestResultState" value="#{booksBean.requestResultState}" />
+	<p:panel id="mainPanel" header="Books">
+	<p:dataTable id="books" var="bookBean" value="#{booksBean.books}">
+	
+		<p:column headerText="Name" styleClass="bookTable">
+			<h:outputText value="#{bookBean.title}" />
+		</p:column>
+		
+	</p:dataTable>
+</p:panel>
+
+
+
+
+</h:form>
+</ui:define>
+</ui:composition>
+</h:body>
+</html>

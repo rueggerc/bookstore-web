@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+ 
+<h:head>
+    	<meta http-equiv="X-UA-Compatible" content="IE-edge,chrome=1"/>
+		<h:outputStylesheet library="css" name="master.css" />
+		<h:outputScript library="js/jquery" name="jquery-1.9.1.js" />
+		<h:outputScript library="js/jquery" name="jquery-ui-1.10.3.custom.js" />
+		<h:outputScript library="js" name="global-functions.js" />
+		<h:outputScript library="js" name="ajax.js" />
+		
+		<!--  Page Specific Overrides -->
+		<ui:insert name="headContent"></ui:insert>
+		
+</h:head>
+ 
+<h:body style="margin:0px;">
+	<div id="page" style="width:1000px;">
+		<div style="padding:10px 10px 10px 10px;">
+			<table style="width:100%;">
+				<tr>
+					<td valign="top" width="15%">
+						<ui:insert name="leftnav">
+						<ui:include src="/template/leftnav.xhtml" />
+						</ui:insert>
+					</td>
+					<td valign="top" width="85%">
+						<div id="content">
+							<p:ajaxStatus onstart="ajaxWaitCursorOn()" oncomplete="ajaxWaitCursorOff()"/>
+							<ui:insert name="content">
+								<ui:include src="/template/content.xhtml" />
+							</ui:insert>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+	
+	</div>
+ 
+ 
+</h:body>
+</html>

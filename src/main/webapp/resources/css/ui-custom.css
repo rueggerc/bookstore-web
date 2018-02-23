@@ -1,0 +1,17 @@
+
+#ui-datepicker-div { font-size:10px; }
+.ui-menu { 
+	width: 200px; 
+}
+
+.ui-menu .ui-menu-item a { 
+	font-family: Arial;
+	font-style: italic;
+    font-weight: bold;
+    color: blue;
+    font-size: 10pt;
+    text-align: left;
+}
+.ui-button-text, .ui-button {
+	font-size:10px;
+}
